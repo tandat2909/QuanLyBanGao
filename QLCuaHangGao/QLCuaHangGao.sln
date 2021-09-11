@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLCuaHangGao", "QLCuaHangGao\QLCuaHangGao.csproj", "{BC2D3E6B-540E-4BBA-86C1-A46CB40B1BAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "..\DAO\DAO.csproj", "{C822543E-51FA-43BB-BF02-A749444C1CDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "..\Business\Business.csproj", "{7BBEF473-3187-4770-B61F-56B41CBD0101}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC2D3E6B-540E-4BBA-86C1-A46CB40B1BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2D3E6B-540E-4BBA-86C1-A46CB40B1BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2D3E6B-540E-4BBA-86C1-A46CB40B1BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2D3E6B-540E-4BBA-86C1-A46CB40B1BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C822543E-51FA-43BB-BF02-A749444C1CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C822543E-51FA-43BB-BF02-A749444C1CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C822543E-51FA-43BB-BF02-A749444C1CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C822543E-51FA-43BB-BF02-A749444C1CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BBEF473-3187-4770-B61F-56B41CBD0101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBEF473-3187-4770-B61F-56B41CBD0101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BBEF473-3187-4770-B61F-56B41CBD0101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BBEF473-3187-4770-B61F-56B41CBD0101}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4F2BC79-016F-41F8-8311-C1D8BBE9EFFD}
+	EndGlobalSection
+EndGlobal

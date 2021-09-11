@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using DBA;
-using DBA.Repository;
+using DAO.Repository;
+using DAO;
 namespace Business
 {
     public class BUSProduct

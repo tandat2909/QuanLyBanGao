@@ -1,0 +1,15 @@
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\bin\Debug\QLCuaHangGao.exe.config
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\bin\Debug\QLCuaHangGao.exe
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\bin\Debug\QLCuaHangGao.pdb
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.Properties.Resources.resources
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.csproj.GenerateResource.cache
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.csproj.CoreCompileInputs.cache
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.exe
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.pdb
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormQLBanHang.resources
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.csproj.AssemblyReference.cache
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormLogin.resources
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormSanPham.resources
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormKhoHang.resources
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormHoaDon.resources
+D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormNhanVien.resources

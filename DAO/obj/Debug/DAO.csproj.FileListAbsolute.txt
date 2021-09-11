@@ -1,0 +1,15 @@
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.Properties.Resources.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\bin\Debug\DAO.exe.config
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\bin\Debug\DAO.exe
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\bin\Debug\DAO.pdb
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\bin\Debug\EntityFramework.dll
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\bin\Debug\EntityFramework.xml
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.exe
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.pdb
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.Migrations.init.resources
