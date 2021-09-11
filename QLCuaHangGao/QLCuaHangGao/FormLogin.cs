@@ -17,7 +17,7 @@ namespace QLCuaHangGao
 {
     public partial class FormLogin : Form
     {
-     
+        BUSUser bus = new BUSUser();
         public FormLogin()
         {
             InitializeComponent();
@@ -30,16 +30,14 @@ namespace QLCuaHangGao
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            ManageContext context = new ManageContext();
-            BUSUser bus = new BUSUser();
-
             try
             {
-                 bool status = bus.Login(txtID, txtPass);
+                bool status = bus.Login(txtID, txtPass);
                 if (status)
                 {
-                    MessageBox.Show("Login thành công");
+                    FormQLBanHang formQLBanHang = new FormQLBanHang(this);
+                    formQLBanHang.Show();
+                    this.Hide();
                 }
                 else
                 {

@@ -31,6 +31,10 @@ namespace QLCuaHangGao
         {
             this.label5 = new System.Windows.Forms.Label();
             this.dgvChiTietNhanVien = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,10 +53,6 @@ namespace QLCuaHangGao
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhanVien)).BeginInit();
             this.grbChiTietSP.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -90,6 +90,34 @@ namespace QLCuaHangGao
             this.dgvChiTietNhanVien.RowTemplate.Height = 24;
             this.dgvChiTietNhanVien.Size = new System.Drawing.Size(757, 444);
             this.dgvChiTietNhanVien.TabIndex = 6;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã NV";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên NV";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Ngày BĐ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Ngày KT";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // label3
             // 
@@ -135,28 +163,28 @@ namespace QLCuaHangGao
             // 
             this.txtNgayKT.Location = new System.Drawing.Point(138, 238);
             this.txtNgayKT.Name = "txtNgayKT";
-            this.txtNgayKT.Size = new System.Drawing.Size(199, 32);
+            this.txtNgayKT.Size = new System.Drawing.Size(199, 27);
             this.txtNgayKT.TabIndex = 3;
             // 
             // txtNgayBD
             // 
             this.txtNgayBD.Location = new System.Drawing.Point(138, 184);
             this.txtNgayBD.Name = "txtNgayBD";
-            this.txtNgayBD.Size = new System.Drawing.Size(199, 32);
+            this.txtNgayBD.Size = new System.Drawing.Size(199, 27);
             this.txtNgayBD.TabIndex = 3;
             // 
             // txtTenNV
             // 
             this.txtTenNV.Location = new System.Drawing.Point(138, 135);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(199, 32);
+            this.txtTenNV.Size = new System.Drawing.Size(199, 27);
             this.txtTenNV.TabIndex = 3;
             // 
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(138, 85);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(199, 32);
+            this.txtMaNV.Size = new System.Drawing.Size(199, 27);
             this.txtMaNV.TabIndex = 3;
             // 
             // label12
@@ -165,7 +193,7 @@ namespace QLCuaHangGao
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(15, 247);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 23);
+            this.label12.Size = new System.Drawing.Size(81, 21);
             this.label12.TabIndex = 2;
             this.label12.Text = "Ngày KT :";
             // 
@@ -175,7 +203,7 @@ namespace QLCuaHangGao
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(15, 193);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 23);
+            this.label6.Size = new System.Drawing.Size(86, 21);
             this.label6.TabIndex = 2;
             this.label6.Text = "Ngày BĐ :";
             // 
@@ -185,7 +213,7 @@ namespace QLCuaHangGao
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(15, 144);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 23);
+            this.label7.Size = new System.Drawing.Size(73, 21);
             this.label7.TabIndex = 2;
             this.label7.Text = "Tên NV :";
             // 
@@ -195,7 +223,7 @@ namespace QLCuaHangGao
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(15, 94);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 23);
+            this.label11.Size = new System.Drawing.Size(71, 21);
             this.label11.TabIndex = 2;
             this.label11.Text = "Mã NV :";
             // 
@@ -298,37 +326,9 @@ namespace QLCuaHangGao
             this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCapNhat.UseVisualStyleBackColor = false;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã NV";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên NV";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Ngày BĐ";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Ngày KT";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
             // FormNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 653);
@@ -348,6 +348,7 @@ namespace QLCuaHangGao
             this.Name = "FormNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Nhân Viên";
+            this.Load += new System.EventHandler(this.FormNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhanVien)).EndInit();
             this.grbChiTietSP.ResumeLayout(false);
             this.grbChiTietSP.PerformLayout();

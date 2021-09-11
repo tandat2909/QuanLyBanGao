@@ -14,7 +14,7 @@ namespace QLCuaHangGao.BUS
         UserRepository userRepository = new UserRepository();
         public bool Login(TextBox txtUserName,TextBox txtPassword)
         {
-            User a = new User()
+           /* User a = new User()
             {
                 FirstName = "Vũ Tấn",
                 LastName = "Đạt",
@@ -22,9 +22,14 @@ namespace QLCuaHangGao.BUS
                 UserName = txtUserName.Text,
                 Password = txtPassword.Text
             };
-            userRepository.Add(a);
+            userRepository.Add(a);*/
 
             return userRepository.Login(txtUserName.Text, txtPassword.Text);
+        }
+        public void getAllEmloyee(DataGridView dgvUser)
+        {
+            dgvUser.DataSource = userRepository.GetAll();
+
         }
     }
 }

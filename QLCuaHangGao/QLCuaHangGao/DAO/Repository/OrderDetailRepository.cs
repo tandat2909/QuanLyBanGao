@@ -2,18 +2,20 @@
 using QLCuaHangGao.DAO.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace QLCuaHangGao.DAO.Repository
 {
     public class OrderDetailRepository:ContextRepository
     {
-        public OrderDetail GetOrderDetail(int orderDetailId) { throw new Exception("chưa làm"); }
+        public OrderDetail GetOrderDetail(int orderDetailId,int productId) { throw new Exception("chưa làm"); }
+        
         public List<OrderDetail> GetAllOrderDetailByOrder(Order order){
             /*
              lấy tất cả chi tiết hóa đơn theo hóa đơn
             */
-            throw new  Exception("Chưa làm");
+            return GetContext().OrderDetails.Where(od => od.OrderId == order.OrderId).ToList();
         }
         /*public List<OrderDetail> GetAll()
         {
@@ -25,23 +27,46 @@ namespace QLCuaHangGao.DAO.Repository
             throw new Exception("Chưa làm");
         }*/
        
-        public Order Add(OrderDetail orderDetails)
+        public OrderDetail Add(OrderDetail orderDetails)
         {
-           throw new Exception("Chưa làm");
+            ManageContext context = GetContext();
+            OrderDetail od =  context.OrderDetails.Add(orderDetails);
+            context.SaveChanges();
+            return od;
         }
      
-        public Order Update(Order order)
+        public OrderDetail Update(OrderDetail orderDetail)
         {
-            throw new Exception("Chưa làm");
+            if (orderDetail.Price <= 0) throw new ValidateException("Giá Không hợp lệ");
+            if (orderDetail.Quantity <= 0) throw new ValidateException("Số lượng không hợp lệ");
+            ManageContext context = GetContext();
+            OrderDetail od = context.OrderDetails.First(o => o.OrderId == orderDetail.OrderId && o.ProductId == o.ProductId);
+            od.Price = orderDetail.Price;
+            od.Quantity = orderDetail.Quantity;
+            context.SaveChanges();
+            return od;
+
         }
-        public bool Delete(Order order)
+        public bool Delete(OrderDetail order)
         {
-            return Delete(order.OrderId);
+            return Delete(order.OrderId,order.ProductId);
         }
 
-        public bool Delete(int orderId)
+        public bool Delete(int orderId, int product)
         {
-            throw new Exception("Chưa làm");
+            try
+            {
+                ManageContext context = GetContext();
+                OrderDetail od = context.OrderDetails.First(o => o.OrderId == orderId && o.ProductId == product);
+                context.OrderDetails.Remove(od);
+                context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
     }
 }

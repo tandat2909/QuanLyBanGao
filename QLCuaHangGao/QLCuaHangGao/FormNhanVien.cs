@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLCuaHangGao.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace QLCuaHangGao
 {
     public partial class FormNhanVien : Form
     {
+        BUSUser bUSUser = new BUSUser();
         public FormNhanVien()
         {
             InitializeComponent();
+        }
+
+        private void FormNhanVien_Load(object sender, EventArgs e)
+        {
+            updateListUser();
+        }
+        private void updateListUser()
+        {
+            bUSUser.getAllEmloyee(dgvChiTietNhanVien);
         }
     }
 }

@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BUSProduct.cs" />
     <Compile Include="BUS\BUSUser.cs" />
     <Compile Include="FormHoaDon.cs">
       <SubType>Form</SubType>
@@ -98,6 +99,10 @@
     <Compile Include="Migrations\202109111525598_init.designer.cs">
       <DependentUpon>202109111525598_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109111701454_ChangeFieldOrderDetail.cs" />
+    <Compile Include="Migrations\202109111701454_ChangeFieldOrderDetail.designer.cs">
+      <DependentUpon>202109111701454_ChangeFieldOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="DAO\Model\Category.cs" />
     <Compile Include="DAO\Model\Order.cs" />
@@ -134,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109111525598_init.resx">
       <DependentUpon>202109111525598_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109111701454_ChangeFieldOrderDetail.resx">
+      <DependentUpon>202109111701454_ChangeFieldOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

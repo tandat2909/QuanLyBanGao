@@ -14,13 +14,14 @@ namespace QLCuaHangGao
     {
         int PanelWidth;
         bool isCollapsed;
-
-        public FormQLBanHang()
+        FormLogin formLogin;
+        public FormQLBanHang(FormLogin form)
         {
             InitializeComponent();
             timerTime.Start();
             PanelWidth = panelLeft.Width;
             isCollapsed = false;
+            formLogin = form;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -60,7 +61,9 @@ namespace QLCuaHangGao
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Dispose();    
+            
+            this.Dispose();
+            formLogin.Show();
         }
 
         private void btnSanPham_Click(object sender, EventArgs e)

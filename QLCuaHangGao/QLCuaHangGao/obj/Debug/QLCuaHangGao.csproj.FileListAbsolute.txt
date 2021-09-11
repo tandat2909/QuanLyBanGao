@@ -33,3 +33,5 @@ C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLC
 C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.exe
 C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.pdb
 C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.Migrations.init.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.csproj.AssemblyReference.cache
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.Migrations.ChangeFieldOrderDetail.resources
