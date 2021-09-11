@@ -17,13 +17,21 @@ namespace DBA
         [Display(Name = "Mô tả sản phẩm")]
         public string Description { get; set; }
         [Required, Display(Name = "Giá")]
-        public decimal Price { get; set; }
+        public decimal Price { get; set; } = decimal.MinValue;
 
         public bool is_active { get; set; } = true;
         public decimal Amount { set; get; }
         [Required, Display(Name = "Danh mục")]
         public int CategoryID { get; set; }
+
         public virtual Category Category { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Product<ProductId = {0}; ProductName = {1}; Price = {2} ;Amount = {3} Category = {4}>; is_active = {5} ",
+                ProductId,ProductName,Price,Amount,CategoryID,is_active
+                );
+        }
     }
 
 }

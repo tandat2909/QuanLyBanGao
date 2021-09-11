@@ -18,6 +18,11 @@ namespace DBA
         public string Description { get; set; }
         public bool is_active { set; get; } = true;
 
-       // public ISet<Product> Products;
+        // public ISet<Product> Products;
+        public override string ToString()
+        {
+            return string.Format("Category<CategoryId={0}; CategoryName={1}; is_active = {2}", CategoryId, CategoryName, is_active);
+        }
     }
+
 }
