@@ -63,9 +63,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageContext.cs" />
-    <Compile Include="Migrations\202109111354108_init.cs" />
-    <Compile Include="Migrations\202109111354108_init.designer.cs">
-      <DependentUpon>202109111354108_init.cs</DependentUpon>
+    <Compile Include="Migrations\202109111439233_init.cs" />
+    <Compile Include="Migrations\202109111439233_init.designer.cs">
+      <DependentUpon>202109111439233_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Category.cs" />
@@ -83,8 +83,11 @@
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\RoleRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
-    <EmbeddedResource Include="Migrations\202109111354108_init.resx">
-      <DependentUpon>202109111354108_init.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109111439233_init.resx">
+      <DependentUpon>202109111439233_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

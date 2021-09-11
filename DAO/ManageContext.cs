@@ -7,8 +7,8 @@ namespace DAO
 {
     public class ManageContext : DbContext
     {
-        private static string connentstring = "Data Source=DESKTOP-TINICE;Initial Catalog=QLBANGAO;Integrated Security=True";
-        public ManageContext(): base(connentstring) { }
+       
+        public ManageContext(): base("cnStr") { }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Product> Products { get; set; }

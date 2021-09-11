@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business;
+
 namespace QLCuaHangGao
 {
     public partial class FormHoaDon : Form

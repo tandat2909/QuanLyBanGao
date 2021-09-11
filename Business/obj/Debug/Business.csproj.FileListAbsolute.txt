@@ -1,0 +1,15 @@
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\bin\Debug\Business.exe.config
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\bin\Debug\Business.exe
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\bin\Debug\Business.pdb
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\bin\Debug\DAO.exe
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\bin\Debug\EntityFramework.dll
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\bin\Debug\DAO.pdb
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\bin\Debug\DAO.exe.config
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\bin\Debug\EntityFramework.xml
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\obj\Debug\Business.csproj.AssemblyReference.cache
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\obj\Debug\Business.Properties.Resources.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\obj\Debug\Business.csproj.GenerateResource.cache
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\obj\Debug\Business.exe
+C:\Users\datoa\source\repos\QuanLyBanGao\Business\obj\Debug\Business.pdb

@@ -12,4 +12,5 @@ C:\Users\datoa\source\repos\QuanLyBanGao\DAO\bin\Debug\EntityFramework.SqlServer
 C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.exe
 C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.pdb
+C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.Form1.resources
 C:\Users\datoa\source\repos\QuanLyBanGao\DAO\obj\Debug\DAO.Migrations.init.resources

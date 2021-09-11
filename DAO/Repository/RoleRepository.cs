@@ -12,7 +12,9 @@ namespace DAO.Repository
         
         public Role add(Role r)
         {
-            return GetContext().Roles.Add(r);
+            ManageContext context = new ManageContext();
+            Role rs = context.Roles.Add(r);
+            return rs;
         }
 
         public List<Role> getAll()

@@ -13,3 +13,23 @@ D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormSanPham.resource
 D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormKhoHang.resources
 D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormHoaDon.resources
 D:\LT CSDL\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormNhanVien.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\bin\Debug\QLCuaHangGao.exe.config
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\bin\Debug\QLCuaHangGao.exe
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\bin\Debug\QLCuaHangGao.pdb
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\bin\Debug\EntityFramework.dll
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\bin\Debug\EntityFramework.xml
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormHoaDon.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormKhoHang.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormLogin.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormNhanVien.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormSanPham.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormQLBanHang.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.Properties.Resources.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.csproj.GenerateResource.cache
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.csproj.CoreCompileInputs.cache
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.csproj.CopyComplete
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.exe
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.pdb
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.Migrations.init.resources

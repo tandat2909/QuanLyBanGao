@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUSProduct.cs" />
+    <Compile Include="BUSUser.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
