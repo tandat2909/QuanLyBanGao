@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLCuaHangGao.BUS;
+using QLCuaHangGao.DAO.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,15 +13,98 @@ using System.Windows.Forms;
 namespace QLCuaHangGao
 {
     public partial class FormSanPham : Form
-    {  
+    {
+        BUSProduct busProduct = new BUSProduct();
+        BUSCategory busCategory = new BUSCategory();
+       
         public FormSanPham()
         {
             InitializeComponent();
+        
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void FormSanPham_Load(object sender, EventArgs e)
+        {
+            busCategory.GetAll(cbxCate);
+            loadProductAll();
+        }
+        private void loadProductAll()
+        {
+            dgvChiTietSanPham.Rows.Clear();
+            busProduct.GetAllProduct(dgvChiTietSanPham);
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                busProduct.Add(txtTenSP, cbxCate, txtDonGia, txtGhiChu);  
+                loadProductAll();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+          
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewCell c in dgvChiTietSanPham.SelectedCells)
+            {
+                if (c.RowIndex >= dgvChiTietSanPham.Rows.Count - 1)
+                {
+                    MessageBox.Show("Chọn sản phẩm cần xóa");
+                    break;
+                }
+                if (c.Selected)
+                {
+                    if (busProduct.Delete(int.Parse(dgvChiTietSanPham.Rows[c.RowIndex].Cells[0].ToString())))
+                    {
+                        
+                        loadProductAll();
+                        MessageBox.Show("Xóa sản phẩm thành công");
+                    }
+                    else MessageBox.Show("Xóa sản phẩm thất bại");
+
+                }
+                   
+            }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Product p = busProduct.Update(txtMaSP,txtTenSP, cbxCate, txtDonGia, txtGhiChu);
+                loadProductAll();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+        }
+
+        private void dgvChiTietSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && (e.RowIndex < dgvChiTietSanPham.Rows.Count - 1 || e.RowIndex <= dgvChiTietSanPham.Rows.Count - 2))
+            {
+                txtMaSP.Text = dgvChiTietSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtTenSP.Text = dgvChiTietSanPham.Rows[e.RowIndex].Cells[1].Value.ToString();
+               
+                txtDonGia.Text = dgvChiTietSanPham.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtGhiChu.Text = dgvChiTietSanPham.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                cbxCate.SelectedIndex = cbxCate.FindString(dgvChiTietSanPham.Rows[e.RowIndex].Cells[2].Value.ToString());
+            }
+        }
     }
 }
+
+//todo thiếu form thên category, 

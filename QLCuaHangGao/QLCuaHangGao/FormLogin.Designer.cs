@@ -109,7 +109,7 @@ namespace QLCuaHangGao
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(6, 127);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 30);
+            this.label3.Size = new System.Drawing.Size(105, 22);
             this.label3.TabIndex = 1;
             this.label3.Text = "Password :";
             // 
@@ -119,7 +119,7 @@ namespace QLCuaHangGao
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 30);
+            this.label2.Size = new System.Drawing.Size(39, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "ID :";
             // 
@@ -127,16 +127,18 @@ namespace QLCuaHangGao
             // 
             this.txtPass.Location = new System.Drawing.Point(165, 121);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(228, 36);
+            this.txtPass.Size = new System.Drawing.Size(228, 30);
             this.txtPass.TabIndex = 0;
+            this.txtPass.Text = "Admin@123";
             this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(165, 76);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(228, 36);
+            this.txtID.Size = new System.Drawing.Size(228, 30);
             this.txtID.TabIndex = 0;
+            this.txtID.Text = "Tinice12";
             // 
             // btnLogin
             // 

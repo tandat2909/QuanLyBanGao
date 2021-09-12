@@ -11,11 +11,11 @@ namespace QLCuaHangGao.DAO.Repository
     {
         public OrderDetail GetOrderDetail(int orderDetailId,int productId) { throw new Exception("chưa làm"); }
         
-        public List<OrderDetail> GetAllOrderDetailByOrder(Order order){
+        public List<OrderDetail> GetAllOrderDetailByOrder(int orderId){
             /*
              lấy tất cả chi tiết hóa đơn theo hóa đơn
             */
-            return GetContext().OrderDetails.Where(od => od.OrderId == order.OrderId).ToList();
+            return GetContext().OrderDetails.Where(od => od.OrderId == orderId).ToList();
         }
         /*public List<OrderDetail> GetAll()
         {
@@ -33,6 +33,15 @@ namespace QLCuaHangGao.DAO.Repository
             OrderDetail od =  context.OrderDetails.Add(orderDetails);
             context.SaveChanges();
             return od;
+        }
+
+        public List<OrderDetail> AddRange(List<OrderDetail> orderDetails)
+        {
+            ManageContext context = GetContext();
+            List<OrderDetail> ors =  context.OrderDetails.AddRange(orderDetails).ToList();
+            context.SaveChanges();
+            return ors;
+
         }
      
         public OrderDetail Update(OrderDetail orderDetail)

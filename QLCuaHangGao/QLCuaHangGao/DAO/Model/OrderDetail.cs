@@ -15,7 +15,7 @@ namespace QLCuaHangGao.DAO.Model
         public int OrderId { get; set; }
         public virtual Order OrderTable { get; set; }
         [Key]
-        [Column(Order = 2),Index(IsUnique = true)]
+        [Column(Order = 2)]
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
         public decimal Quantity { get; set; } 

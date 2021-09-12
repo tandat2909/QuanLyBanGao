@@ -10,14 +10,23 @@ namespace QLCuaHangGao.DAO.Repository
     public class OrderRepository:ContextRepository
     {
         OrderDetailRepository orderDetailRepository = new OrderDetailRepository();
-        public Order GetOrder(int orderId) { throw new Exception("chưa làm"); }
+        RoleRepository roleRepository = new RoleRepository();
+        public Order GetOrder(int orderId)
+        {
+
+            return GetContext().Orders.FirstOrDefault(o => o.OrderId == orderId && o.is_active == true);
+        }
         public List<Order> GetAllOrderByEmployee(User employee)
         {
-            //selete * from orders where employeeID = 2
-            //ApplicationContext db = new ApplicationContext();
-            ManageContext db = new ManageContext();
-            List<Order> dv = db.Orders.Where(o => o.UserId == employee.UserId).ToList();
-            return dv;
+            try
+            {
+                return GetAll(employee);
+            }
+            catch
+            {
+                List<Order> dv = GetContext().Orders.Where(o => o.UserId == employee.UserId && o.is_active == true).ToList();
+                return dv;
+            }
         }
         public List<Order> GetAll(User admin)
         {
@@ -25,7 +34,7 @@ namespace QLCuaHangGao.DAO.Repository
              * Chỉ admin mới được phép xem tất cả hóa đơn
              kiểm tra admin có role admin khong nếu không văng lỗi khong có quyền hoặc trả về mảng rổng nên văng lỗi không có quyền
              */
-            if(admin.Role.Name != "Admin")
+            if (admin.RoleID != roleRepository.getRolebyName("Admin").RoleId)
             {
                 throw new Exception("Bạn không có quyền truy cập");
             }
@@ -54,12 +63,16 @@ namespace QLCuaHangGao.DAO.Repository
                 UserId = userId
             };
             Order instance_order = context.Orders.Add(ordernew);
-
+            context.SaveChanges();
             foreach(OrderDetail od  in orderDetails)
             {
+                
                 od.OrderId = instance_order.OrderId;
-                orderDetailRepository.Add(od);
+                Console.WriteLine(string.Format("{0} {1} {2} {3}", od.OrderId, od.Price, od.ProductId, od.Quantity));
+                instance_order.total += od.Price * od.Quantity;
             }
+            
+            orderDetailRepository.AddRange(orderDetails);
             context.SaveChanges();
             return instance_order;
         }

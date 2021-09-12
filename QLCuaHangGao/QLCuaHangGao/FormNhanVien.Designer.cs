@@ -31,15 +31,11 @@ namespace QLCuaHangGao
         {
             this.label5 = new System.Windows.Forms.Label();
             this.dgvChiTietNhanVien = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNgayKT = new System.Windows.Forms.TextBox();
+            this.txtHo = new System.Windows.Forms.TextBox();
             this.txtNgayBD = new System.Windows.Forms.TextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
@@ -49,10 +45,20 @@ namespace QLCuaHangGao
             this.label11 = new System.Windows.Forms.Label();
             this.grbChiTietSP = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbxRole = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Họ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quyền = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhanVien)).BeginInit();
             this.grbChiTietSP.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,9 +86,11 @@ namespace QLCuaHangGao
             this.dgvChiTietNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.UserName,
+            this.Họ,
             this.Column2,
-            this.Column4,
-            this.Column5});
+            this.Quyền,
+            this.Column4});
             this.dgvChiTietNhanVien.Location = new System.Drawing.Point(38, 95);
             this.dgvChiTietNhanVien.Margin = new System.Windows.Forms.Padding(5);
             this.dgvChiTietNhanVien.Name = "dgvChiTietNhanVien";
@@ -90,34 +98,7 @@ namespace QLCuaHangGao
             this.dgvChiTietNhanVien.RowTemplate.Height = 24;
             this.dgvChiTietNhanVien.Size = new System.Drawing.Size(757, 444);
             this.dgvChiTietNhanVien.TabIndex = 6;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã NV";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên NV";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Ngày BĐ";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Ngày KT";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.dgvChiTietNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietNhanVien_CellClick);
             // 
             // label3
             // 
@@ -159,23 +140,24 @@ namespace QLCuaHangGao
             this.label1.Size = new System.Drawing.Size(1182, 17);
             this.label1.TabIndex = 11;
             // 
-            // txtNgayKT
+            // txtHo
             // 
-            this.txtNgayKT.Location = new System.Drawing.Point(138, 238);
-            this.txtNgayKT.Name = "txtNgayKT";
-            this.txtNgayKT.Size = new System.Drawing.Size(199, 27);
-            this.txtNgayKT.TabIndex = 3;
+            this.txtHo.Location = new System.Drawing.Point(138, 180);
+            this.txtHo.Name = "txtHo";
+            this.txtHo.Size = new System.Drawing.Size(199, 27);
+            this.txtHo.TabIndex = 3;
             // 
             // txtNgayBD
             // 
-            this.txtNgayBD.Location = new System.Drawing.Point(138, 184);
+            this.txtNgayBD.Location = new System.Drawing.Point(138, 319);
             this.txtNgayBD.Name = "txtNgayBD";
+            this.txtNgayBD.ReadOnly = true;
             this.txtNgayBD.Size = new System.Drawing.Size(199, 27);
             this.txtNgayBD.TabIndex = 3;
             // 
             // txtTenNV
             // 
-            this.txtTenNV.Location = new System.Drawing.Point(138, 135);
+            this.txtTenNV.Location = new System.Drawing.Point(138, 226);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(199, 27);
             this.txtTenNV.TabIndex = 3;
@@ -184,24 +166,24 @@ namespace QLCuaHangGao
             // 
             this.txtMaNV.Location = new System.Drawing.Point(138, 85);
             this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.ReadOnly = true;
             this.txtMaNV.Size = new System.Drawing.Size(199, 27);
             this.txtMaNV.TabIndex = 3;
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(15, 247);
+            this.label12.Location = new System.Drawing.Point(15, 183);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 21);
+            this.label12.Size = new System.Drawing.Size(52, 25);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Ngày KT :";
+            this.label12.Text = "Họ:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 193);
+            this.label6.Location = new System.Drawing.Point(15, 325);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 21);
             this.label6.TabIndex = 2;
@@ -211,7 +193,7 @@ namespace QLCuaHangGao
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 144);
+            this.label7.Location = new System.Drawing.Point(15, 232);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 21);
             this.label7.TabIndex = 2;
@@ -229,7 +211,11 @@ namespace QLCuaHangGao
             // 
             // grbChiTietSP
             // 
-            this.grbChiTietSP.Controls.Add(this.txtNgayKT);
+            this.grbChiTietSP.Controls.Add(this.txtUserName);
+            this.grbChiTietSP.Controls.Add(this.label9);
+            this.grbChiTietSP.Controls.Add(this.cbxRole);
+            this.grbChiTietSP.Controls.Add(this.label8);
+            this.grbChiTietSP.Controls.Add(this.txtHo);
             this.grbChiTietSP.Controls.Add(this.txtNgayBD);
             this.grbChiTietSP.Controls.Add(this.txtTenNV);
             this.grbChiTietSP.Controls.Add(this.txtMaNV);
@@ -240,7 +226,7 @@ namespace QLCuaHangGao
             this.grbChiTietSP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbChiTietSP.Location = new System.Drawing.Point(775, 18);
             this.grbChiTietSP.Name = "grbChiTietSP";
-            this.grbChiTietSP.Size = new System.Drawing.Size(343, 326);
+            this.grbChiTietSP.Size = new System.Drawing.Size(343, 367);
             this.grbChiTietSP.TabIndex = 1;
             this.grbChiTietSP.TabStop = false;
             this.grbChiTietSP.Text = "Thông tin nhân viên";
@@ -259,23 +245,24 @@ namespace QLCuaHangGao
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết nhân viên";
             // 
-            // btnTimKiem
+            // label8
             // 
-            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimKiem.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTimKiem.FlatAppearance.BorderSize = 2;
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.Image = global::QLCuaHangGao.Properties.Resources.icons8_search_more_24px;
-            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(775, 350);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(343, 47);
-            this.btnTimKiem.TabIndex = 6;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(15, 277);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 25);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Quyền:";
+            // 
+            // cbxRole
+            // 
+            this.cbxRole.Enabled = false;
+            this.cbxRole.FormattingEnabled = true;
+            this.cbxRole.Location = new System.Drawing.Point(138, 272);
+            this.cbxRole.Name = "cbxRole";
+            this.cbxRole.Size = new System.Drawing.Size(198, 29);
+            this.cbxRole.Sorted = true;
+            this.cbxRole.TabIndex = 5;
             // 
             // btnThem
             // 
@@ -294,6 +281,7 @@ namespace QLCuaHangGao
             this.btnThem.Text = "Thêm NV";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
@@ -309,6 +297,7 @@ namespace QLCuaHangGao
             this.btnXoa.TabIndex = 13;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnCapNhat
             // 
@@ -325,6 +314,79 @@ namespace QLCuaHangGao
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTimKiem.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnTimKiem.FlatAppearance.BorderSize = 2;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Image = global::QLCuaHangGao.Properties.Resources.icons8_search_more_24px;
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimKiem.Location = new System.Drawing.Point(775, 391);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(343, 47);
+            this.btnTimKiem.TabIndex = 6;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 40F;
+            this.Column1.HeaderText = "Mã NV";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // UserName
+            // 
+            this.UserName.HeaderText = "UserName";
+            this.UserName.Name = "UserName";
+            // 
+            // Họ
+            // 
+            this.Họ.HeaderText = "Họ";
+            this.Họ.Name = "Họ";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Quyền
+            // 
+            this.Quyền.HeaderText = "Quyền";
+            this.Quyền.Name = "Quyền";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Ngày BĐ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(138, 130);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(199, 27);
+            this.txtUserName.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(15, 133);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 20);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "UserName:";
             // 
             // FormNhanVien
             // 
@@ -368,7 +430,7 @@ namespace QLCuaHangGao
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNgayKT;
+        private System.Windows.Forms.TextBox txtHo;
         private System.Windows.Forms.TextBox txtNgayBD;
         private System.Windows.Forms.TextBox txtTenNV;
         private System.Windows.Forms.TextBox txtMaNV;
@@ -379,9 +441,15 @@ namespace QLCuaHangGao
         private System.Windows.Forms.GroupBox grbChiTietSP;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbxRole;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Họ;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quyền;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.Label label9;
     }
 }

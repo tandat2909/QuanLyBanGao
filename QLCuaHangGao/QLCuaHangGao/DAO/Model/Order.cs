@@ -17,6 +17,8 @@ namespace QLCuaHangGao.DAO.Model
         public DateTime OrderDate { get; set; } = DateTime.Now;
 
         public bool is_active { get; set; } = true;
+        public decimal total { set; get; }
+
         [Required]
         public int UserId { set; get; }
         public virtual User User { set; get; }

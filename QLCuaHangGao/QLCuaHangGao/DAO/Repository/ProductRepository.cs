@@ -116,11 +116,17 @@ namespace QLCuaHangGao.DAO.Repository
                 ValidateProduct(productNew);
                 ManageContext db = GetContext();
                 Product current = db.Products.First(p => p.ProductId == productNew.ProductId && p.is_active == true);
+                if (productNew.CategoryID == 0)
+                {
+                    productNew.CategoryID = productNew.Category.CategoryId;
+                }
                 current.ProductName = productNew.ProductName;
                 current.Price = productNew.Price;
                 current.Description = productNew.Description;
                 current.CategoryID = productNew.CategoryID;
                 current.Amount = productNew.Amount;
+                Console.WriteLine(current.ToString());
+                Console.WriteLine(productNew.ToString());
                 db.SaveChanges();
                 return current;
             }

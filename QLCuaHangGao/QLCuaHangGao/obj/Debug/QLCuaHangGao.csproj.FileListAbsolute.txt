@@ -35,3 +35,7 @@ C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLC
 C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.Migrations.init.resources
 C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.csproj.AssemblyReference.cache
 C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.Migrations.ChangeFieldOrderDetail.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.Migrations.changeprodutfieldorderdetail.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.Migrations.addTotalFieldOrder.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.Migrations.DeleteColBirtdayUser.resources
+C:\Users\datoa\source\repos\QuanLyBanGao\QLCuaHangGao\QLCuaHangGao\obj\Debug\QLCuaHangGao.FormThemNhanVien.resources

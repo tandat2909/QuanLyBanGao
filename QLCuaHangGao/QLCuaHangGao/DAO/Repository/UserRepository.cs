@@ -41,10 +41,29 @@ namespace QLCuaHangGao.DAO.Repository
         {
             return GetContext().Users.Where(u => u.UserName == userName).FirstOrDefault();
         }
-        public List<User> GetAll() {
+        public List<User> GetAll(User admin)
+        {
+            if (admin.RoleID == role.getRolebyName("Admin").RoleId)
+            {
+                List<User> users = GetContext().Users.Select(u => u).ToList();
+                return users;
 
-            List<User> users = GetContext().Users.Select(u => u).ToList();
-            return users;
+            }
+            List<User> one = new List<User>();
+            one.Add(getUserById(admin.UserId));
+            return one;
+
+           
+        }
+        private bool ValidateUser(User us)
+        {
+            if (us == null) throw new UserException("Không có đối tượng user");
+            Regex rgxUser = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$", RegexOptions.Compiled | RegexOptions.IgnoreCase); // tối thiểu 6 ký tự, ít nhất một chữ cái và một số
+            if (us.UserName == null || !rgxUser.IsMatch(us.UserName)) throw new ValidateException("Username tối thiểu 6 ký tự, ít nhất một chữ cái và một số");
+            
+            // if (us.FirstName == null) throw new ValidateException("First Name không được để trống");
+            if (us.LastName == null) throw new ValidateException("Last Name không được để trống");
+            return true;
         }
         public User Add(User us)
         {
@@ -52,15 +71,13 @@ namespace QLCuaHangGao.DAO.Repository
                 Tạo thông tin tài khoản người dùng với quyền Employee
              */
 
-            if (us == null) throw new UserException("Không có đối tượng user");
-            Regex rgxUser = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$", RegexOptions.Compiled | RegexOptions.IgnoreCase); // tối thiểu 6 ký tự, ít nhất một chữ cái và một số
+            /*if (us.BirthDay == DateTime.MinValue) throw new ValidateException("Không được để trống thông tin birthday");*/
+            ValidateUser(us);
             Regex rgxpassword = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$", RegexOptions.Compiled);//Tối thiểu tám ký tự, ít nhất một chữ cái, một số và một ký tự đặc biệt
-            if (us.UserName == null || !rgxUser.IsMatch(us.UserName)) throw new ValidateException("Username tối thiểu 6 ký tự, ít nhất một chữ cái và một số");
+
             if (GetUserByUserName(us.UserName) != null) throw new ValidateException("Username tồn tại vui lòng chọn username khác");
             if (us.Password == null || !rgxpassword.IsMatch(us.Password)) throw new ValidateException("Password Tối thiểu tám ký tự, ít nhất một chữ cái, một số và một ký tự đặc biệt");
-            // if (us.FirstName == null) throw new ValidateException("First Name không được để trống");
-            if (us.LastName == null) throw new ValidateException("Last Name không được để trống");
-            if (us.BirthDay == DateTime.MinValue) throw new ValidateException("Không được để trống thông tin birthday");
+
             us.Password = ComputeSha256Hash(us.Password);
             us.RoleID = role.getRolebyName("Employee").RoleId;
             us.CreatedDate = DateTime.Now;
@@ -73,15 +90,45 @@ namespace QLCuaHangGao.DAO.Repository
         }
         public User Update(User us)
         {
+            ValidateUser(us);
             ManageContext context = GetContext();
             User db_user =  context.Users.FirstOrDefault(u => u.UserId == us.UserId);
-            db_user.BirthDay = us.BirthDay;
-            db_user.FirstName = us.LastName;
-            if(!CheckPassword(db_user,us.Password))
-                db_user.Password = ComputeSha256Hash(us.Password);
+            /*db_user.BirthDay = us.BirthDay;*/
+            if(!db_user.UserName.Equals( us.UserName))
+            {
+                if (GetUserByUserName(us.UserName) != null) throw new ValidateException("Username tồn tại vui lòng chọn username khác");
+            }
+            
+            db_user.UserName = us.UserName;
+            db_user.FirstName = us.FirstName;
             db_user.LastName = us.LastName;
+            db_user.RoleID = us.RoleID == 0 ? db_user.RoleID : us.RoleID;
             context.SaveChanges();
             return db_user;
+        }
+
+        public bool ChangePassword(int userId,string password)
+        {
+            Regex rgxpassword = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$", RegexOptions.Compiled);//Tối thiểu tám ký tự, ít nhất một chữ cái, một số và một ký tự đặc biệt
+            if(!rgxpassword.IsMatch(password)) throw new ValidateException("Password Tối thiểu tám ký tự, ít nhất một chữ cái, một số và một ký tự đặc biệt");
+            try
+            {
+                ManageContext context = GetContext();
+                User db_user = context.Users.First(u => u.UserId == userId);
+
+                if (!CheckPassword(db_user, password))
+                {
+                    db_user.Password = ComputeSha256Hash(password);
+                    context.SaveChanges();
+                }
+                   
+                return true;
+            }
+            catch
+            {
+                throw new Exception("User không tồn tại");
+            }
+            
         }
         public bool Delete(User us) {
             /*
@@ -144,11 +191,11 @@ namespace QLCuaHangGao.DAO.Repository
             }
         }
 
-        public bool Login(string username, string password)
+        public User Login(string username, string password)
         {
             password = ComputeSha256Hash(password);
             User us = GetContext().Users.FirstOrDefault(u => u.UserName == username && u.Password == password && u.is_active == true);
-            return us != null;
+            return us;
         }
     }
 }

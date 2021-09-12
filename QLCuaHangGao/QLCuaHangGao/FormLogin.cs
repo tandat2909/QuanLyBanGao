@@ -1,6 +1,7 @@
 ﻿
 using QLCuaHangGao.BUS;
 using QLCuaHangGao.DAO;
+using QLCuaHangGao.DAO.Model;
 using QLCuaHangGao.DAO.Repository;
 using System;
 using System.Collections.Generic;
@@ -32,9 +33,10 @@ namespace QLCuaHangGao
         {
             try
             {
-                bool status = bus.Login(txtID, txtPass);
-                if (status)
+                User userLogin = bus.Login(txtID, txtPass);
+                if (userLogin != null)
                 {
+                    Utils.userCurrent = userLogin;
                     FormQLBanHang formQLBanHang = new FormQLBanHang(this);
                     formQLBanHang.Show();
                     this.Hide();

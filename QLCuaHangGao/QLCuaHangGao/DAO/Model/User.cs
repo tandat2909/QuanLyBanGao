@@ -17,7 +17,7 @@ namespace QLCuaHangGao.DAO.Model
         [StringLength(300)]
         public string Password { set; get; }
         //[Timestamp]
-        public DateTime BirthDay { set; get; } 
+       
         [StringLength(50)]
         public string FirstName { set; get; }
         [StringLength(50)]
@@ -36,7 +36,7 @@ namespace QLCuaHangGao.DAO.Model
 
         public string GetFullName()
         {
-            return FirstName + LastName;
+            return FirstName + " " + LastName;
         }
        
         public override string ToString()
