@@ -32,6 +32,7 @@ namespace QLCuaHangGao.DAO.Model
                 ProductId,ProductName,Price,Amount,CategoryID,is_active
                 );
         }
+        public virtual List<WareHouse>WareHouses { set; get; }
     }
 
 }

@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -62,6 +63,27 @@
     <Compile Include="BUS\BUSOrderDetail.cs" />
     <Compile Include="BUS\BUSProduct.cs" />
     <Compile Include="BUS\BUSUser.cs" />
+    <Compile Include="BUS\BUSWareHouse.cs" />
+    <Compile Include="DAO\Model\WareHouse.cs" />
+    <Compile Include="DAO\Repository\WareHouseRepository.cs" />
+    <Compile Include="FormCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategory.Designer.cs">
+      <DependentUpon>FormCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChangePassword.Designer.cs">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChiTietHoaDon.designer.cs">
+      <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +147,34 @@
     <Compile Include="Migrations\202109121648031_DeleteColBirtdayUser.designer.cs">
       <DependentUpon>202109121648031_DeleteColBirtdayUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109131928188_addModelWareHouse.cs" />
+    <Compile Include="Migrations\202109131928188_addModelWareHouse.designer.cs">
+      <DependentUpon>202109131928188_addModelWareHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109131948321_addColUserModelWareHouse.cs" />
+    <Compile Include="Migrations\202109131948321_addColUserModelWareHouse.designer.cs">
+      <DependentUpon>202109131948321_addColUserModelWareHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109131959476_addPrimarykeyModelWarehouse.cs" />
+    <Compile Include="Migrations\202109131959476_addPrimarykeyModelWarehouse.designer.cs">
+      <DependentUpon>202109131959476_addPrimarykeyModelWarehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109132231220_UPdatePrimaryKeyModelWaseHoues.cs" />
+    <Compile Include="Migrations\202109132231220_UPdatePrimaryKeyModelWaseHoues.designer.cs">
+      <DependentUpon>202109132231220_UPdatePrimaryKeyModelWaseHoues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109132235219_UPdatePrimaryKeyModelWaseHouesv2.cs" />
+    <Compile Include="Migrations\202109132235219_UPdatePrimaryKeyModelWaseHouesv2.designer.cs">
+      <DependentUpon>202109132235219_UPdatePrimaryKeyModelWaseHouesv2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109132237201_DeletePrimaryProductKeyModelWaseHoues.cs" />
+    <Compile Include="Migrations\202109132237201_DeletePrimaryProductKeyModelWaseHoues.designer.cs">
+      <DependentUpon>202109132237201_DeletePrimaryProductKeyModelWaseHoues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109132334256_UpdateModelaWareHouse.cs" />
+    <Compile Include="Migrations\202109132334256_UpdateModelaWareHouse.designer.cs">
+      <DependentUpon>202109132334256_UpdateModelaWareHouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="DAO\Model\Category.cs" />
     <Compile Include="DAO\Model\Order.cs" />
@@ -142,6 +192,15 @@
     <Compile Include="DAO\Repository\RoleRepository.cs" />
     <Compile Include="DAO\Repository\UserRepository.cs" />
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="FormCategory.resx">
+      <DependentUpon>FormCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChangePassword.resx">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChiTietHoaDon.resx">
+      <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHoaDon.resx">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +236,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109121648031_DeleteColBirtdayUser.resx">
       <DependentUpon>202109121648031_DeleteColBirtdayUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109131928188_addModelWareHouse.resx">
+      <DependentUpon>202109131928188_addModelWareHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109131948321_addColUserModelWareHouse.resx">
+      <DependentUpon>202109131948321_addColUserModelWareHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109131959476_addPrimarykeyModelWarehouse.resx">
+      <DependentUpon>202109131959476_addPrimarykeyModelWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109132231220_UPdatePrimaryKeyModelWaseHoues.resx">
+      <DependentUpon>202109132231220_UPdatePrimaryKeyModelWaseHoues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109132235219_UPdatePrimaryKeyModelWaseHouesv2.resx">
+      <DependentUpon>202109132235219_UPdatePrimaryKeyModelWaseHouesv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109132237201_DeletePrimaryProductKeyModelWaseHoues.resx">
+      <DependentUpon>202109132237201_DeletePrimaryProductKeyModelWaseHoues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109132334256_UpdateModelaWareHouse.resx">
+      <DependentUpon>202109132334256_UpdateModelaWareHouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

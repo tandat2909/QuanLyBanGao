@@ -278,7 +278,6 @@ namespace QLCuaHangGao
             this.lbPriceSP.Name = "lbPriceSP";
             this.lbPriceSP.Size = new System.Drawing.Size(310, 35);
             this.lbPriceSP.TabIndex = 3;
-            this.lbPriceSP.Text = "23.500";
             this.lbPriceSP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbNameSP
@@ -288,7 +287,6 @@ namespace QLCuaHangGao
             this.lbNameSP.Name = "lbNameSP";
             this.lbNameSP.Size = new System.Drawing.Size(310, 35);
             this.lbNameSP.TabIndex = 3;
-            this.lbNameSP.Text = "Gạo Lức";
             this.lbNameSP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbMaSP
@@ -298,7 +296,6 @@ namespace QLCuaHangGao
             this.lbMaSP.Name = "lbMaSP";
             this.lbMaSP.Size = new System.Drawing.Size(310, 35);
             this.lbMaSP.TabIndex = 3;
-            this.lbMaSP.Text = "1";
             this.lbMaSP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -347,6 +344,7 @@ namespace QLCuaHangGao
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddSP.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAddSP.Enabled = false;
             this.btnAddSP.FlatAppearance.BorderSize = 2;
             this.btnAddSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSP.Image = global::QLCuaHangGao.Properties.Resources.icons8_add_shopping_cart_24px;
@@ -431,7 +429,7 @@ namespace QLCuaHangGao
             // dgvOrder
             // 
             this.dgvOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOrder.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvOrder.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvOrder.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -446,6 +444,7 @@ namespace QLCuaHangGao
             this.dgvOrder.RowTemplate.Height = 24;
             this.dgvOrder.Size = new System.Drawing.Size(602, 395);
             this.dgvOrder.TabIndex = 0;
+            this.dgvOrder.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellEnter);
             // 
             // colNameSP
             // 
@@ -466,7 +465,6 @@ namespace QLCuaHangGao
             this.colSLSP.HeaderText = "SL";
             this.colSLSP.MinimumWidth = 6;
             this.colSLSP.Name = "colSLSP";
-            this.colSLSP.ReadOnly = true;
             // 
             // colPrice
             // 
@@ -565,6 +563,7 @@ namespace QLCuaHangGao
             this.Name = "FormQLBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Cửa Hàng Gạo";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormQLBanHang_FormClosed);
             this.Load += new System.EventHandler(this.FormQLBanHang_Load);
             this.panelLeft.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

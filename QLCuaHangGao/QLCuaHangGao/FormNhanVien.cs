@@ -115,5 +115,17 @@ namespace QLCuaHangGao
         {
 
         }
+
+        private void btnChangePW_Click(object sender, EventArgs e)
+        {
+            int emId=0;
+            try
+            {
+                emId = int.Parse(txtMaNV.Text);
+            }
+            catch { }
+            FormChangePassword formChangePassword = new FormChangePassword(emId);
+            formChangePassword.ShowDialog();
+        }
     }
 }

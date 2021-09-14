@@ -22,35 +22,75 @@ namespace QLCuaHangGao
         public FormLogin()
         {
             InitializeComponent();
+            bus.initData();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        void loginuser()
         {
             try
             {
+                if (String.IsNullOrEmpty(txtPass.Text.Trim()) && String.IsNullOrEmpty(txtID.Text.Trim()))
+                {
+                    MessageBox.Show("Please enter Username and Password !", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
+                }
+                if (String.IsNullOrEmpty(txtID.Text.Trim()))
+                {
+                    MessageBox.Show("Please enter Username!     ", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtID.Focus();
+                    return;
+                }
+                if (String.IsNullOrEmpty(txtPass.Text.Trim()))
+                {
+                    MessageBox.Show("Please enter Password!     ", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPass.Focus();
+                    return;
+                }
                 User userLogin = bus.Login(txtID, txtPass);
                 if (userLogin != null)
                 {
                     Utils.userCurrent = userLogin;
                     FormQLBanHang formQLBanHang = new FormQLBanHang(this);
                     formQLBanHang.Show();
+                    txtID.Clear();
+                    txtPass.Clear();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Login thất bại");
+
+                    txtID.Focus();
+                    MessageBox.Show("You entered the wrong password or username, please re-enter!", "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            loginuser();
            
+        }
+        void loginWithKeyEnter(PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) loginuser();
+        }
+        private void txtPass_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+            loginWithKeyEnter(e);
+        }
+
+        private void txtID_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            loginWithKeyEnter(e);
         }
     }
 }

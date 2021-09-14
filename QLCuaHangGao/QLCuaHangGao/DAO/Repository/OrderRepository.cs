@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Transactions;
 
 namespace QLCuaHangGao.DAO.Repository
 {
@@ -11,6 +12,7 @@ namespace QLCuaHangGao.DAO.Repository
     {
         OrderDetailRepository orderDetailRepository = new OrderDetailRepository();
         RoleRepository roleRepository = new RoleRepository();
+        WareHouseRepository wareHouseRepository = new WareHouseRepository();
         public Order GetOrder(int orderId)
         {
 
@@ -57,24 +59,28 @@ namespace QLCuaHangGao.DAO.Repository
         public Order Add(List<OrderDetail> orderDetails, int userId)
         {
 
-            ManageContext context = GetContext();
-            Order ordernew = new Order()
+            using (var trans = new TransactionScope())
             {
-                UserId = userId
-            };
-            Order instance_order = context.Orders.Add(ordernew);
-            context.SaveChanges();
-            foreach(OrderDetail od  in orderDetails)
-            {
-                
-                od.OrderId = instance_order.OrderId;
-                Console.WriteLine(string.Format("{0} {1} {2} {3}", od.OrderId, od.Price, od.ProductId, od.Quantity));
-                instance_order.total += od.Price * od.Quantity;
+                if (orderDetails.Count <= 0) throw new Exception("Vui lòng chọn sản phảm cần thanh toán");
+                ManageContext context = GetContext();
+                Order ordernew = new Order()
+                {
+                    UserId = userId
+                };
+                Order instance_order = context.Orders.Add(ordernew);
+                context.SaveChanges();
+                foreach (OrderDetail od in orderDetails)
+                {
+                    od.OrderId = instance_order.OrderId;
+                    Console.WriteLine(string.Format("{0} {1} {2} {3}", od.OrderId, od.Price, od.ProductId, od.Quantity));
+                    instance_order.total += od.Price * od.Quantity;
+                    wareHouseRepository.UpdateWareHouseForPayOrder(od.ProductId, od.Quantity);
+                }
+                orderDetailRepository.AddRange(orderDetails);
+                context.SaveChanges();
+                trans.Complete();
+                return instance_order;
             }
-            
-            orderDetailRepository.AddRange(orderDetails);
-            context.SaveChanges();
-            return instance_order;
         }
 /*        public Order Update(Order order)
         {

@@ -17,7 +17,7 @@ namespace QLCuaHangGao.DAO
         public DbSet<Category> Categories { set; get; }
         public DbSet<Order> Orders { set; get; }
         public DbSet<OrderDetail> OrderDetails {set;get;}
+        public DbSet<WareHouse> WareHouses { set; get; }
         
-     
     }
 }

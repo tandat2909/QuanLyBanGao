@@ -15,11 +15,47 @@ namespace QLCuaHangGao.BUS
         RoleRepository roleRepository = new RoleRepository();
         public User Login(TextBox txtUserName, TextBox txtPassword)
         {
-          
-
             return userRepository.Login(txtUserName.Text, txtPassword.Text);
         }
+        internal void initData()
+        {
+            if( roleRepository.getAll().Count <= 0)
+            {
 
+              
+                Role radmin = new Role()
+                {
+                    Name = "Admin"
+                };
+                Role rem = new Role()
+                {
+                    Name = "Employee"
+                };
+                Role instance_admin = roleRepository.add(radmin);
+                roleRepository.add(rem);
+                User us_admin = new User()
+                {
+                    UserName = "Admin123",
+                    Password = "Admin@123",
+                    FirstName = "Admin",
+                    RoleID = instance_admin.RoleId,
+                    LastName = "",
+                };
+                userRepository.AddAdmin(us_admin);
+
+            }
+        }
+        internal void ChangePassword(TextBox txtPassOld, TextBox txtPassNew)
+        {
+            
+            if (userRepository.CheckPassword(Utils.userCurrent, txtPassOld.Text))
+                userRepository.ChangePassword(Utils.userCurrent.UserId, txtPassNew.Text);
+            else throw new Exception("Mật khẩu cũ không đúng");
+        }
+        internal void ChangePasswordByAdmin(int employeeId, TextBox txtPassNew)
+        {
+            userRepository.ChangePassword(employeeId, txtPassNew.Text);
+        }
         internal void loadRole(ComboBox cbxRole)
         {
             cbxRole.DataSource = roleRepository.getAll();
@@ -62,5 +98,10 @@ namespace QLCuaHangGao.BUS
             };
             return userRepository.Update(a);
         }
+        internal bool user_isAdmin(User user)
+        {
+            return user.RoleID == roleRepository.getRolebyName("Admin").RoleId;
+        }
+
     }
 }

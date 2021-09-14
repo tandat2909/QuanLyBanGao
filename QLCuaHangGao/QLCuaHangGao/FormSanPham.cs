@@ -104,6 +104,14 @@ namespace QLCuaHangGao
                 cbxCate.SelectedIndex = cbxCate.FindString(dgvChiTietSanPham.Rows[e.RowIndex].Cells[2].Value.ToString());
             }
         }
+
+        private void btnCate_Click(object sender, EventArgs e)
+        {
+            FormCategory formCategory = new FormCategory();
+            formCategory.ShowDialog();
+            busCategory.GetAll(cbxCate);
+
+        }
     }
 }
 

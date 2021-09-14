@@ -10,6 +10,7 @@ namespace QLCuaHangGao
     public class Utils
     {
        public static User userCurrent { get; set; }
+       
 
     }
 }

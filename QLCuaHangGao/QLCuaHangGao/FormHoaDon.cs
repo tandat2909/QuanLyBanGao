@@ -87,12 +87,8 @@ namespace QLCuaHangGao
                 }
                 if (c.Selected)
                 {
-                    List<OrderDetail> ls = busOrderDetail.GetOrderDetailByOrder(int.Parse(dgvChiTietHoaDon.Rows[c.RowIndex].Cells[0].Value.ToString()));
-                    string s = "";
-                    ls.ForEach(od => s += "PRoducID: " + od.ProductId + " price" + od.Price + " amout " + od.Quantity +"\n");
-
-                    MessageBox.Show(s);
-                    break;
+                    FormChiTietHoaDon formChiTietHoaDon = new FormChiTietHoaDon(int.Parse(dgvChiTietHoaDon.Rows[c.RowIndex].Cells[0].Value.ToString()));
+                    formChiTietHoaDon.Show();
                 }
 
             }

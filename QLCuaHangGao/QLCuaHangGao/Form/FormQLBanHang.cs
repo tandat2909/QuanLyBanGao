@@ -36,11 +36,11 @@ namespace QLCuaHangGao
             timerTime.Start();
             PanelWidth = panelLeft.Width;
             isCollapsed = false;
-           
+
         }
         private void FormQLBanHang_Load(object sender, EventArgs e)
         {
-          
+
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -115,12 +115,13 @@ namespace QLCuaHangGao
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Product sp =  busProduct.GetProductById(txtSearchSP);
+            Product sp = busProduct.GetProductById(txtSearchSP);
             if (sp != null)
             {
                 lbMaSP.Text = sp.ProductId.ToString();
                 lbNameSP.Text = sp.ProductName;
                 lbPriceSP.Text = sp.Price.ToString();
+                btnAddSP.Enabled = true;
             }
             else
             {
@@ -153,14 +154,16 @@ namespace QLCuaHangGao
                     kiemtra = false;
                     // tang so luong
                     item.Cells[2].Value = decimal.Parse(item.Cells[2].Value.ToString()) + nubSL.Value;
+
                     break;
                 }
             }
             if (kiemtra) dgvOrder.Rows.Add(lbNameSP.Text, lbMaSP.Text, nubSL.Value.ToString(), lbPriceSP.Text);
-            
-            lbTongTien.Text = (decimal.Parse(lbTongTien.Text) + decimal.Parse(lbPriceSP.Text) * nubSL.Value).ToString();
-
-        }
+            calcSumOrder();
+            lbMaSP.Text = lbNameSP.Text = lbPriceSP.Text = "";
+            btnAddSP.Enabled = false;
+            nubSL.Value = 0;
+        } 
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -178,10 +181,41 @@ namespace QLCuaHangGao
 
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
-            Order od = busOrder.Add(dgvOrder, Utils.userCurrent);
-            MessageBox.Show("MÃ Hóa đơn: " +  od.OrderId+ "Tổng hóa đơn: " + od.total.ToString());
+            try
+            {
+                Order od = busOrder.Add(dgvOrder, Utils.userCurrent);
+                MessageBox.Show("Lưa hóa đơn thành công\nMã hóa đơn: " + od.OrderId + "\nTổng hóa đơn: " + od.total.ToString());
+                dgvOrder.Rows.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
-        
+        private void FormQLBanHang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formLogin.Show();
+        }
+
+        void calcSumOrder()
+        {
+            decimal sum = 0;
+            foreach(DataGridViewRow od in dgvOrder.Rows)
+            {
+                if(od.Cells["colSLSP"].Value != null)
+                {
+                    sum += decimal.Parse(od.Cells["colSLSP"].Value.ToString()) * decimal.Parse(od.Cells["colPrice"].Value.ToString());
+
+                }
+            }
+            lbTongTien.Text = sum.ToString();
+        }
+    
+        private void dgvOrder_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            calcSumOrder();
+        }
     }
 }

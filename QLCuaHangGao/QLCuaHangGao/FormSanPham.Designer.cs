@@ -47,16 +47,17 @@ namespace QLCuaHangGao
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvChiTietSanPham = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnCate = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grbChiTietSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietSanPham)).BeginInit();
@@ -230,7 +231,7 @@ namespace QLCuaHangGao
             // 
             this.dgvChiTietSanPham.AllowUserToOrderColumns = true;
             this.dgvChiTietSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvChiTietSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dgvChiTietSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvChiTietSanPham.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvChiTietSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -242,7 +243,7 @@ namespace QLCuaHangGao
             this.dgvChiTietSanPham.Location = new System.Drawing.Point(38, 95);
             this.dgvChiTietSanPham.Margin = new System.Windows.Forms.Padding(5);
             this.dgvChiTietSanPham.Name = "dgvChiTietSanPham";
-            this.dgvChiTietSanPham.RowHeadersWidth = 51;
+            this.dgvChiTietSanPham.RowHeadersWidth = 40;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvChiTietSanPham.RowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -251,19 +252,6 @@ namespace QLCuaHangGao
             this.dgvChiTietSanPham.Size = new System.Drawing.Size(757, 444);
             this.dgvChiTietSanPham.TabIndex = 0;
             this.dgvChiTietSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietSanPham_CellClick);
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(447, 17);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(315, 53);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Quản lý sản phẩm";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Column1
             // 
@@ -304,6 +292,72 @@ namespace QLCuaHangGao
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label5.Location = new System.Drawing.Point(447, 17);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(315, 53);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Quản lý sản phẩm";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCate
+            // 
+            this.btnCate.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCate.FlatAppearance.BorderSize = 2;
+            this.btnCate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCate.Image = global::QLCuaHangGao.Properties.Resources.icons8_open_end_wrench_24px;
+            this.btnCate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCate.Location = new System.Drawing.Point(803, 559);
+            this.btnCate.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCate.Name = "btnCate";
+            this.btnCate.Size = new System.Drawing.Size(165, 56);
+            this.btnCate.TabIndex = 6;
+            this.btnCate.Text = "Danh Mục";
+            this.btnCate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCate.UseVisualStyleBackColor = false;
+            this.btnCate.Click += new System.EventHandler(this.btnCate_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnThem.FlatAppearance.BorderSize = 2;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Image = global::QLCuaHangGao.Properties.Resources.icons8_add_shopping_cart_24px;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(62, 559);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(165, 56);
+            this.btnThem.TabIndex = 5;
+            this.btnThem.Text = "Thêm SP";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCapNhat.FlatAppearance.BorderSize = 2;
+            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhat.Image = global::QLCuaHangGao.Properties.Resources.icons8_open_end_wrench_24px;
+            this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCapNhat.Location = new System.Drawing.Point(411, 559);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(173, 56);
+            this.btnCapNhat.TabIndex = 4;
+            this.btnCapNhat.Text = "Cập Nhật";
+            this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -311,7 +365,7 @@ namespace QLCuaHangGao
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Image = global::QLCuaHangGao.Properties.Resources.icons8_recycle_bin_24px;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(342, 559);
+            this.btnXoa.Location = new System.Drawing.Point(235, 559);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(5);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(166, 56);
@@ -338,47 +392,12 @@ namespace QLCuaHangGao
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // btnThem
-            // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThem.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnThem.FlatAppearance.BorderSize = 2;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Image = global::QLCuaHangGao.Properties.Resources.icons8_add_shopping_cart_24px;
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(169, 559);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(165, 56);
-            this.btnThem.TabIndex = 5;
-            this.btnThem.Text = "Thêm SP";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCapNhat.FlatAppearance.BorderSize = 2;
-            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhat.Image = global::QLCuaHangGao.Properties.Resources.icons8_open_end_wrench_24px;
-            this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCapNhat.Location = new System.Drawing.Point(518, 559);
-            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(173, 56);
-            this.btnCapNhat.TabIndex = 4;
-            this.btnCapNhat.Text = "Cập Nhật";
-            this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCapNhat.UseVisualStyleBackColor = false;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
-            // 
             // FormSanPham
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.Controls.Add(this.btnCate);
             this.Controls.Add(this.dgvChiTietSanPham);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnCapNhat);
@@ -433,5 +452,6 @@ namespace QLCuaHangGao
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnCate;
     }
 }

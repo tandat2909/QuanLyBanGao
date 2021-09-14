@@ -24,6 +24,13 @@ namespace QLCuaHangGao.BUS
             return productRepository.Add(product);
 
         }
+
+        internal void GetAllProduct(ComboBox cbxSP)
+        {
+            cbxSP.DataSource = productRepository.GetAll();
+            cbxSP.DisplayMember = "ProductName";
+        }
+
         public void GetAllProduct(DataGridView dgxProduct)
         {
             productRepository.GetAll().ForEach(p =>
@@ -56,5 +63,7 @@ namespace QLCuaHangGao.BUS
             };
             return productRepository.Update(p);
         }
+
+       
     }
 }

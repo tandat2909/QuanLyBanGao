@@ -18,7 +18,7 @@ namespace QLCuaHangGao.DAO.Repository
     public class ProductRepository:ContextRepository
     {
         CategoryRepository categoryRepository = new CategoryRepository();
-
+       
         public Product GetProduct(int productId)
         {
             /*ManageContext db = new ManageContext();

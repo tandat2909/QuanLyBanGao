@@ -14,15 +14,16 @@ namespace QLCuaHangGao.DAO.Repository
         
         public Role add(Role r)
         {
-            ManageContext context = new ManageContext();
+            ManageContext context = GetContext();
             Role rs = context.Roles.Add(r);
+            context.SaveChanges();
             return rs;
         }
 
         public List<Role> getAll()
         {
             
-            List<Role> role = GetContext().Roles.Select(u => u).ToList();
+            List<Role> role = GetContext().Roles.ToList();
             return role;
         }
         public Role getRolebyName(string name){

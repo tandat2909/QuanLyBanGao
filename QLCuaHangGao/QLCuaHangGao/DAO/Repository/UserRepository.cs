@@ -88,6 +88,27 @@ namespace QLCuaHangGao.DAO.Repository
             return instacne;
 
         }
+        public User AddAdmin(User us)
+        {
+            /*
+                Tạo thông tin tài khoản người dùng với quyền Admin
+             */
+            ValidateUser(us);
+            Regex rgxpassword = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$", RegexOptions.Compiled);//Tối thiểu tám ký tự, ít nhất một chữ cái, một số và một ký tự đặc biệt
+
+            if (GetUserByUserName(us.UserName) != null) throw new ValidateException("Username tồn tại vui lòng chọn username khác");
+            if (us.Password == null || !rgxpassword.IsMatch(us.Password)) throw new ValidateException("Password Tối thiểu tám ký tự, ít nhất một chữ cái, một số và một ký tự đặc biệt");
+
+            us.Password = ComputeSha256Hash(us.Password);
+            us.RoleID = us.RoleID;
+            us.CreatedDate = DateTime.Now;
+            us.is_active = true;
+            ManageContext context = GetContext();
+            User instacne = context.Users.Add(us);
+            context.SaveChanges();
+            return instacne;
+
+        }
         public User Update(User us)
         {
             ValidateUser(us);

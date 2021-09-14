@@ -43,32 +43,36 @@ namespace QLCuaHangGao
             // 
             // txtHo
             // 
+            this.txtHo.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtHo.Location = new System.Drawing.Point(148, 128);
             this.txtHo.Name = "txtHo";
-            this.txtHo.Size = new System.Drawing.Size(199, 20);
+            this.txtHo.Size = new System.Drawing.Size(199, 27);
             this.txtHo.TabIndex = 10;
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtPassword.Location = new System.Drawing.Point(148, 93);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(199, 20);
+            this.txtPassword.Size = new System.Drawing.Size(199, 27);
             this.txtPassword.TabIndex = 11;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtTenNV
             // 
+            this.txtTenNV.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtTenNV.Location = new System.Drawing.Point(147, 165);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(199, 20);
+            this.txtTenNV.Size = new System.Drawing.Size(199, 27);
             this.txtTenNV.TabIndex = 12;
             // 
             // txtUserName
             // 
+            this.txtUserName.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtUserName.Location = new System.Drawing.Point(147, 53);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(199, 20);
+            this.txtUserName.Size = new System.Drawing.Size(199, 27);
             this.txtUserName.TabIndex = 13;
             // 
             // label12
@@ -96,9 +100,9 @@ namespace QLCuaHangGao
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(26, 165);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 21);
+            this.label7.Size = new System.Drawing.Size(69, 21);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Tên NV :";
+            this.label7.Text = "Tên NV ";
             // 
             // label11
             // 
@@ -112,9 +116,10 @@ namespace QLCuaHangGao
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(230, 245);
+            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnAdd.Location = new System.Drawing.Point(199, 245);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(95, 37);
+            this.btnAdd.Size = new System.Drawing.Size(167, 40);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Thêm Nhân Viên";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -122,11 +127,12 @@ namespace QLCuaHangGao
             // 
             // btnClose
             // 
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnClose.Location = new System.Drawing.Point(65, 245);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(95, 37);
             this.btnClose.TabIndex = 17;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "Đóng";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -146,6 +152,7 @@ namespace QLCuaHangGao
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label11);
             this.Name = "FormThemNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Nhân Viên";
             this.Load += new System.EventHandler(this.FormThemNhanVien_Load);
             this.ResumeLayout(false);

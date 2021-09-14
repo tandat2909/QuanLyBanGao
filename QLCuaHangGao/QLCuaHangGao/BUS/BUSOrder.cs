@@ -26,9 +26,8 @@ namespace QLCuaHangGao.BUS
                         Price = decimal.Parse(od.Cells["colPrice"].Value.ToString()),
                         ProductId = int.Parse(od.Cells["colMaSP"].Value.ToString()),
                         Quantity = decimal.Parse(od.Cells["colSLSP"].Value.ToString()),
-                        
-                       
                     };
+                    if (orderDetail.Quantity == 0) throw new Exception("Yêu cầu nhập số lượng sản phẩm: " + od.Cells["colNameSP"].Value.ToString());
                     listOrderDeltail.Add(orderDetail);
                 }
             }
