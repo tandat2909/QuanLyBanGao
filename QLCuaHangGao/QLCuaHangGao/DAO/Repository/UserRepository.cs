@@ -35,17 +35,17 @@ namespace QLCuaHangGao.DAO.Repository
 
         public User getUserById(int id)
         {
-            return GetContext().Users.FirstOrDefault(u => u.UserId == id);
+            return GetContext().Users.FirstOrDefault(u => u.UserId == id && u.is_active == true);
         }
         public User GetUserByUserName(string userName)
         {
-            return GetContext().Users.Where(u => u.UserName == userName).FirstOrDefault();
+            return GetContext().Users.Where(u => u.UserName == userName && u.is_active == true).FirstOrDefault();
         }
         public List<User> GetAll(User admin)
         {
             if (admin.RoleID == role.getRolebyName("Admin").RoleId)
             {
-                List<User> users = GetContext().Users.Select(u => u).ToList();
+                List<User> users = GetContext().Users.Where(u => u.is_active == true).ToList();
                 return users;
 
             }
