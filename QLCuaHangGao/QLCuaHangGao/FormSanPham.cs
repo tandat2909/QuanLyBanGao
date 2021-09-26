@@ -56,26 +56,19 @@ namespace QLCuaHangGao
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewCell c in dgvChiTietSanPham.SelectedCells)
+            
+            string masp = txtMaSP.Text;
+            if (masp.Length == 0)
             {
-                if (c.RowIndex >= dgvChiTietSanPham.Rows.Count - 1)
-                {
-                    MessageBox.Show("Chọn sản phẩm cần xóa");
-                    break;
-                }
-                if (c.Selected)
-                {
-                    if (busProduct.Delete(int.Parse(dgvChiTietSanPham.Rows[c.RowIndex].Cells[0].ToString())))
-                    {
-                        
-                        loadProductAll();
-                        MessageBox.Show("Xóa sản phẩm thành công");
-                    }
-                    else MessageBox.Show("Xóa sản phẩm thất bại");
-
-                }
-                   
+                MessageBox.Show("Chọn sản phẩm cần xóa");
+                return;
             }
+            if (busProduct.Delete(int.Parse(masp)))
+            {
+                loadProductAll();
+                MessageBox.Show("Xóa sản phẩm thành công");
+            }
+            else MessageBox.Show("Xóa sản phẩm thất bại");
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)

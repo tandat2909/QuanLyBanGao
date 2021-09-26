@@ -1,5 +1,4 @@
-﻿
-using QLCuaHangGao.DAO.Model;
+﻿using QLCuaHangGao.DAO.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
