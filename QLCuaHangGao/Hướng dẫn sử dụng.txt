@@ -1,0 +1,25 @@
+Đồ án QLCuaHangGao sử dụng Entity Framework, model CodeFirst
+b1. Mở MS SQL Server
+b2. Tạo một database rỗng tên QLBANGAO (có thể dùng tên khác)
+b3. Mở project QLCuaHangGao.sln
+b4. Mở file App.config thay đổi chuỗi kết nối của app "cnStrs" liên kết với database rỗng vừa tạo
+b5. Mở Package Manager Console gõ lệnh Update-database để tạo model 
+b6. start chương trình
+
+Tài khoản quản trị mặc định:
+username: Admin123
+password: Admin@123
+
+Cần nhập thông tin sản phẩm, và kho hàng trước khi thực hiên thanh toán
+b1. Click vào Sản phẩm
+b2. Click vào Danh mục [ trước khi thêm sản phẩm cần thêm dang mục sản phẩm ]
+b3. Nhập tên danh mục => click vào button thêm [thêm dang mục cần thiết] => tắt form Danh mục tiến hành thêm sản phẩm mới
+b4. Tiến hành nhập thông tin sản phẩm bao gồm: tên,giá, và chọn sản phẩm thuộc danh mục nào (Nhấn button thêm để thêm sản phẩm)
+b5. Sau khi thêm xong tiến hàng tắt form sản phẩm click vào kho hàng,
+b6. chọn sản phẩm cần thêm vào kho và nhập số lượng và click button thêm để lưu thông tin vào kho
+b7. tạo hóa đơn(Form chính(màn hình chính))
+	Nhập mã sản phẩm vào ô mã SP 
+	click button tìm kiếm 
+	nếu có thì chọn số lượng và click button thêm SP
+	có thể thay đổi số lượng trong bảng chi tiết đơn hàng
+	click vào button Lưu để lưu hóa đơn
