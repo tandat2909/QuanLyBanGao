@@ -16,7 +16,7 @@ namespace QLCuaHangGao
     {
         BUSProduct busProduct = new BUSProduct();
         BUSCategory busCategory = new BUSCategory();
-       
+        
         public FormSanPham()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace QLCuaHangGao
         }
         private void loadProductAll()
         {
-            dgvChiTietSanPham.Rows.Clear();
+            dgvChiTietSanPham.Rows.Clear(); // lênh xoa các phần tử trong datagrview
             busProduct.GetAllProduct(dgvChiTietSanPham);
         }
 
@@ -51,7 +51,6 @@ namespace QLCuaHangGao
                 MessageBox.Show(ex.Message);
             }
             
-          
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -105,7 +104,33 @@ namespace QLCuaHangGao
             busCategory.GetAll(cbxCate);
 
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int masp = int.Parse(txtMaSP.Text);
+                if (masp >= 0)
+                {
+                    Product result = busProduct.GetProductById(txtMaSP);
+                    txtMaSP.Text = result.ProductId.ToString();
+                    txtTenSP.Text = result.ProductName;
+
+                    txtDonGia.Text = result.Price.ToString();
+                    txtGhiChu.Text = result.Description;
+                    cbxCate.SelectedIndex = cbxCate.FindString(result.Category.CategoryName);
+                }
+                else
+                {
+                    MessageBox.Show("Mã sản phẩm không hợp lệ");
+                    txtMaSP.Focus();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng nhập mã sản phẩm");
+            }
+        }
     }
 }
 
-//todo thiếu form thên category, 

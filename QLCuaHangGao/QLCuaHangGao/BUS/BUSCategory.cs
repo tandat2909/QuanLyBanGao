@@ -16,8 +16,9 @@ namespace QLCuaHangGao.BUS
         internal void GetAll(ComboBox cbxCate)
         {
            
-            cbxCate.DataSource = categoryRepository.GetAll();
+            cbxCate.DataSource = categoryRepository.GetAll(); 
             cbxCate.DisplayMember = "CategoryName";
+            
 
         }
         internal Category Add(TextBox txtCateName)

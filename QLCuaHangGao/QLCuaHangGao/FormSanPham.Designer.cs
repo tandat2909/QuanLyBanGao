@@ -29,7 +29,7 @@ namespace QLCuaHangGao
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grbChiTietSP = new System.Windows.Forms.GroupBox();
             this.cbxCate = new System.Windows.Forms.ComboBox();
@@ -244,9 +244,9 @@ namespace QLCuaHangGao
             this.dgvChiTietSanPham.Margin = new System.Windows.Forms.Padding(5);
             this.dgvChiTietSanPham.Name = "dgvChiTietSanPham";
             this.dgvChiTietSanPham.RowHeadersWidth = 40;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvChiTietSanPham.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvChiTietSanPham.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChiTietSanPham.RowTemplate.Height = 50;
             this.dgvChiTietSanPham.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvChiTietSanPham.Size = new System.Drawing.Size(757, 444);
@@ -391,6 +391,7 @@ namespace QLCuaHangGao
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // FormSanPham
             // 
@@ -433,7 +434,6 @@ namespace QLCuaHangGao
         private System.Windows.Forms.DataGridView dgvChiTietSanPham;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.GroupBox grbChiTietSP;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.TextBox txtDonGia;
@@ -453,5 +453,6 @@ namespace QLCuaHangGao
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnCate;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }

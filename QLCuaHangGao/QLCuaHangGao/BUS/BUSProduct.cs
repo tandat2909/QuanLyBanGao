@@ -25,7 +25,7 @@ namespace QLCuaHangGao.BUS
 
         }
 
-        internal void GetAllProduct(ComboBox cbxSP)
+        public void GetAllProduct(ComboBox cbxSP)
         {
             cbxSP.DataSource = productRepository.GetAll();
             cbxSP.DisplayMember = "ProductName";

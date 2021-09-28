@@ -20,14 +20,17 @@ namespace QLCuaHangGao.DAO.Repository
         {
             return GetContext().Categories.FirstOrDefault(c => c.CategoryId == categoryId && c.is_active == true);
         }
+
         public Category GetCategory(string categoryName)
         {
             return GetContext().Categories.FirstOrDefault(c => c.CategoryName == categoryName && c.is_active == true);
         }
+
         public List<Category> GetAll()
         {
             return GetContext().Categories.Where(c => c.is_active == true).ToList();
         }
+
         public Category Add(Category category)
         {
             ManageContext context = GetContext();
@@ -63,13 +66,14 @@ namespace QLCuaHangGao.DAO.Repository
             try
             {
                 ManageContext context = GetContext();
-               
+
                 Category current = context.Categories.First(c => c.CategoryId == cate.CategoryId);
-                if(cate.CategoryName == current.CategoryName) throw new ValidateException("Tên Danh mục đã tồn tại");
+                if (cate.CategoryName == current.CategoryName) throw new ValidateException("Tên Danh mục đã tồn tại");
                 current.CategoryName = cate.CategoryName;
                 context.SaveChanges();
                 return current;
-            }catch(ValidateException ex)
+            }
+            catch (ValidateException ex)
             {
                 throw ex;
             }
