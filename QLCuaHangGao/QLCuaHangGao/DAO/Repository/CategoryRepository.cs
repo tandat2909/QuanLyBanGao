@@ -18,7 +18,7 @@ namespace QLCuaHangGao.DAO.Repository
     {
         public Category GetCategory(int categoryId)
         {
-            return GetContext().Categories.FirstOrDefault(c => c.CategoryId == categoryId && c.is_active == true);
+            return GetContext().Categories.FirstOrDefault(c => c.CategoryId == categoryId && c.is_active == true); 
         }
 
         public Category GetCategory(string categoryName)

@@ -18,7 +18,6 @@ namespace QLCuaHangGao.DAO.Model
         public string Description { get; set; }
         [Required, Display(Name = "Giá")]
         public decimal Price { get; set; } = decimal.MinValue;
-
         public bool is_active { get; set; } = true;
         public decimal Amount { set; get; }
         [Required, Display(Name = "Danh mục")]

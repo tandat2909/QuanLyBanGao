@@ -206,6 +206,7 @@ namespace QLCuaHangGao
             {
                 if(od.Cells["colSLSP"].Value != null)
                 {
+
                     sum += decimal.Parse(od.Cells["colSLSP"].Value.ToString()) * decimal.Parse(od.Cells["colPrice"].Value.ToString());
 
                 }

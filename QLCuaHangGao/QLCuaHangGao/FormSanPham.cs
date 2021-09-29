@@ -113,12 +113,16 @@ namespace QLCuaHangGao
                 if (masp >= 0)
                 {
                     Product result = busProduct.GetProductById(txtMaSP);
-                    txtMaSP.Text = result.ProductId.ToString();
-                    txtTenSP.Text = result.ProductName;
+                    if (result != null)
+                    {
 
-                    txtDonGia.Text = result.Price.ToString();
-                    txtGhiChu.Text = result.Description;
-                    cbxCate.SelectedIndex = cbxCate.FindString(result.Category.CategoryName);
+                        txtMaSP.Text = result.ProductId.ToString();
+                        txtTenSP.Text = result.ProductName;
+                        txtDonGia.Text = result.Price.ToString();
+                        txtGhiChu.Text = result.Description;
+                        cbxCate.SelectedIndex = cbxCate.FindString(result.Category.CategoryName);
+                    }
+                    MessageBox.Show("Không có sản phẩm với mã id " + masp.ToString());
                 }
                 else
                 {

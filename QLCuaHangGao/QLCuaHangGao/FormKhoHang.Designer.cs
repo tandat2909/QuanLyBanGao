@@ -300,10 +300,11 @@ namespace QLCuaHangGao
             // 
             // cbxSP
             // 
+            this.cbxSP.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSP.FormattingEnabled = true;
             this.cbxSP.Location = new System.Drawing.Point(124, 112);
             this.cbxSP.Name = "cbxSP";
-            this.cbxSP.Size = new System.Drawing.Size(199, 29);
+            this.cbxSP.Size = new System.Drawing.Size(199, 26);
             this.cbxSP.TabIndex = 7;
             // 
             // groupBox1

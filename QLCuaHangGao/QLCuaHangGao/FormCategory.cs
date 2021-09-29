@@ -19,15 +19,11 @@ namespace QLCuaHangGao
             InitializeComponent();
         }
 
-        private void grbChiTietSP_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormCategory_Load(object sender, EventArgs e)
         {
             loadCategory();
         }
+
         void loadCategory()
         {
             dgvChiTietCate.Rows.Clear();
@@ -60,7 +56,6 @@ namespace QLCuaHangGao
             }
             if (busCategory.Delete(int.Parse(txtCateID.Text)))
             {
-
                 loadCategory();
                 MessageBox.Show("Xóa loại thành công");
             }
@@ -85,12 +80,15 @@ namespace QLCuaHangGao
 
         private void dgvChiTietCate_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && (e.RowIndex < dgvChiTietCate.Rows.Count - 1 || e.RowIndex <= dgvChiTietCate.Rows.Count - 2))
+          
+            if (e.RowIndex >= 0 && e.RowIndex < dgvChiTietCate.Rows.Count - 1)
             {
-                txtCateID.Text = dgvChiTietCate.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtCateID.Text = dgvChiTietCate.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
                 txtTenCate.Text = dgvChiTietCate.Rows[e.RowIndex].Cells[1].Value.ToString();
                
             }
         }
+
+     
     }
 }

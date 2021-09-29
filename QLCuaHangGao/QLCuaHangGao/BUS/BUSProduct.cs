@@ -11,7 +11,7 @@ namespace QLCuaHangGao.BUS
 {
     public class BUSProduct
     {
-        ProductRepository productRepository = new ProductRepository();
+        ProductRepository dao_product = new ProductRepository();
         public Product Add(TextBox txtProductName,ComboBox cbxCate,TextBox txtPrice,TextBox txtDescript)
         {
             Product product = new Product()
@@ -21,19 +21,19 @@ namespace QLCuaHangGao.BUS
                 Price = decimal.Parse(txtPrice.Text == null ? "0" : txtPrice.Text),
                 Description = txtDescript.Text
             };
-            return productRepository.Add(product);
+            return dao_product.Add(product);
 
         }
 
         public void GetAllProduct(ComboBox cbxSP)
         {
-            cbxSP.DataSource = productRepository.GetAll();
+            cbxSP.DataSource = dao_product.GetAll();
             cbxSP.DisplayMember = "ProductName";
         }
 
         public void GetAllProduct(DataGridView dgxProduct)
         {
-            productRepository.GetAll().ForEach(p =>
+            dao_product.GetAll().ForEach(p =>
             {
                 dgxProduct.Rows.Add(p.ProductId, p.ProductName, p.Category.CategoryName, p.Price, p.Description);
             });
@@ -42,12 +42,12 @@ namespace QLCuaHangGao.BUS
 
         internal Product GetProductById(TextBox txtSearchSP)
         {
-           return productRepository.GetProduct(int.Parse(txtSearchSP.Text));
+           return dao_product.GetProduct(int.Parse(txtSearchSP.Text));
         }
 
         internal bool Delete(int productId)
         {
-            return productRepository.Delete(productId);
+            return dao_product.Delete(productId);
         }
 
         internal Product Update(TextBox txtMaSP, TextBox txtTenSP, ComboBox cbxCate, TextBox txtDonGia, TextBox txtGhiChu)
@@ -61,7 +61,7 @@ namespace QLCuaHangGao.BUS
                 Category = (Category)cbxCate.SelectedItem,
 
             };
-            return productRepository.Update(p);
+            return dao_product.Update(p);
         }
 
        

@@ -31,6 +31,8 @@ namespace QLCuaHangGao
         {
             this.label5 = new System.Windows.Forms.Label();
             this.dgvChiTietCate = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@ namespace QLCuaHangGao
             this.btnThemCate = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietCate)).BeginInit();
             this.grbChiTietSP.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,6 +83,20 @@ namespace QLCuaHangGao
             this.dgvChiTietCate.Size = new System.Drawing.Size(757, 444);
             this.dgvChiTietCate.TabIndex = 6;
             this.dgvChiTietCate.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietCate_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã Loại";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Loại";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // label3
             // 
@@ -172,7 +186,7 @@ namespace QLCuaHangGao
             this.grbChiTietSP.TabIndex = 1;
             this.grbChiTietSP.TabStop = false;
             this.grbChiTietSP.Text = "Thông tin danh mục";
-            this.grbChiTietSP.Enter += new System.EventHandler(this.grbChiTietSP_Enter);
+
             // 
             // groupBox1
             // 
@@ -187,6 +201,7 @@ namespace QLCuaHangGao
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết loại";
+
             // 
             // btnTimKiem
             // 
@@ -257,20 +272,6 @@ namespace QLCuaHangGao
             this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã Loại";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên Loại";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // FormCategory
             // 

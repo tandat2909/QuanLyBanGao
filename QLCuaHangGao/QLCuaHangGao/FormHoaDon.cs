@@ -15,8 +15,6 @@ namespace QLCuaHangGao
     public partial class FormHoaDon : Form
     {
         BUSOrder busOrder = new BUSOrder();
-        BUSOrderDetail busOrderDetail = new BUSOrderDetail();
-  
         public FormHoaDon()
         {
             InitializeComponent();
@@ -62,15 +60,13 @@ namespace QLCuaHangGao
 
         private void dgvChiTietHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-      
-                if (e.RowIndex >=0 && (e.RowIndex < dgvChiTietHoaDon.Rows.Count - 1|| e.RowIndex <= dgvChiTietHoaDon.Rows.Count - 2))
-                {
-                    txtHD.Text = dgvChiTietHoaDon.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    txtNhanVien.Text = dgvChiTietHoaDon.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    txtNgayBan.Text = dgvChiTietHoaDon.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    txtDonGia.Text = dgvChiTietHoaDon.Rows[e.RowIndex].Cells[3].Value.ToString();
-                }
+            if (e.RowIndex >=0 && e.RowIndex < dgvChiTietHoaDon.Rows.Count - 1)
+            {
+                txtHD.Text = dgvChiTietHoaDon.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtNhanVien.Text = dgvChiTietHoaDon.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtNgayBan.Text = dgvChiTietHoaDon.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtDonGia.Text = dgvChiTietHoaDon.Rows[e.RowIndex].Cells[3].Value.ToString();
+            }
                
            
             

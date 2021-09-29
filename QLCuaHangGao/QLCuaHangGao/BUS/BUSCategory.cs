@@ -11,12 +11,12 @@ namespace QLCuaHangGao.BUS
 {
    public class BUSCategory
     {
-        CategoryRepository categoryRepository = new CategoryRepository();
+        CategoryRepository dao_category = new CategoryRepository();
 
         internal void GetAll(ComboBox cbxCate)
         {
            
-            cbxCate.DataSource = categoryRepository.GetAll(); 
+            cbxCate.DataSource = dao_category.GetAll(); 
             cbxCate.DisplayMember = "CategoryName";
             
 
@@ -27,18 +27,18 @@ namespace QLCuaHangGao.BUS
             {
                 CategoryName = txtCateName.Text
             };
-           return categoryRepository.Add(category);
+           return dao_category.Add(category);
 
         }
 
         internal void GetAll(DataGridView dgvChiTietCate)
         {
-            categoryRepository.GetAll().ForEach(c => dgvChiTietCate.Rows.Add(c.CategoryId, c.CategoryName));
+            dao_category.GetAll().ForEach(c => dgvChiTietCate.Rows.Add(c.CategoryId, c.CategoryName));
         }
 
-        internal bool Delete(int v)
+        internal bool Delete(int idcategory)
         {
-            return categoryRepository.Delete(v);
+            return dao_category.Delete(idcategory);
         }
 
         internal Category Update(TextBox txtCateID,TextBox txtTenCate)
@@ -48,7 +48,7 @@ namespace QLCuaHangGao.BUS
                 CategoryId = int.Parse(txtCateID.Text),
                 CategoryName = txtTenCate.Text
             };
-            return categoryRepository.Update(category);
+            return dao_category.Update(category);
         }
     }
 }
